@@ -5,6 +5,7 @@ specifiers:
   "@angular-devkit/schematics-cli": 15.0.4
   "@cpdevtools/lib-node-utilities": 0.4.49
   "@types/node": 18.11.17
+  "@vercel/ncc": 0.34.0
   husky: 8.0.2
   lint-staged: 13.1.0
   npm-run-all2: 6.0.4
@@ -17,6 +18,7 @@ devDependencies:
   "@angular-devkit/schematics-cli": 15.0.4
   "@cpdevtools/lib-node-utilities": 0.4.49
   "@types/node": 18.11.17
+  "@vercel/ncc": 0.34.0
   husky: 8.0.2
   lint-staged: 13.1.0
   npm-run-all2: 6.0.4
@@ -346,6 +348,11 @@ packages:
 
   /@types/normalize-package-data/2.4.1:
     resolution: { integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw== }
+    dev: true
+
+  /@vercel/ncc/0.34.0:
+    resolution: { integrity: sha512-G9h5ZLBJ/V57Ou9vz5hI8pda/YQX5HQszCs3AmIus3XzsmRn/0Ptic5otD3xVST8QLKk7AMk7AqpsyQGN7MZ9A== }
+    hasBin: true
     dev: true
 
   /acorn-walk/8.2.0:
