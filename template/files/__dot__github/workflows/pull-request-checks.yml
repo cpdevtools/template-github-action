@@ -1,0 +1,31 @@
+name: Check pull request
+
+on:
+  pull_request:
+    branches:
+      - "release/*"
+jobs:
+  check_version_valid_and_new:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v<%= versions.GITHUB_ACTIONS_CHECKOUT %>
+      - uses: ./.github/actions/check-version
+
+  check_build_committed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v<%= versions.GITHUB_ACTIONS_CHECKOUT %>
+
+      - name: Install Node & Dependencies
+        uses: ./.github/actions/setup-node
+
+      - name: Build
+        uses: ./.github/actions/build
+
+      - name: Check Build Files
+        id: check
+        uses: ./.github/actions/check-build-files
+        with:
+          throwOnFail: true

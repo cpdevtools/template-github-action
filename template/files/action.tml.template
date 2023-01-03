@@ -1,0 +1,9 @@
+name: <%= strings.capitalize(package.name) %>
+description: ""
+
+inputs: {}
+outputs: {}
+
+runs:
+  using: "node18"
+  main: "dist/index.js"

@@ -1,0 +1,25 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - "*"
+      - "v/*"
+
+jobs:
+  build:
+    name: Build and test the action
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v<%= versions.GITHUB_ACTIONS_CHECKOUT %>
+
+      - name: Install Node & Dependencies
+        uses: ./.github/actions/setup-node
+
+      - name: Build
+        uses: ./.github/actions/build
+
+      - name: Test
+        uses: ./.github/actions/test

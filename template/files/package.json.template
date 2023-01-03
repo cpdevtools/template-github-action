@@ -1,0 +1,42 @@
+{
+  "name": "<%= package.name %>",
+  "version": "0.0.0-dev.0",
+  "author": "",
+  "license": "",
+  "repository": "<%= package.repository %>",
+  "keywords": [
+    "github",
+    "action"
+  ],
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "run-s prepare:*",
+    "prepare:clean-tags": "pnpm run clean-tags",
+    "prepare:husky": "husky install",
+    "prepare:build": "pnpm run build",
+    "pre-commit": "run-s pre-commit:*",
+    "pre-commit:build": "pnpm run build",
+    "pre-commit:tags": "pnpm run clean-tags",
+    "clean-tags": "git tag | xargs git tag -d",
+    "build": "ncc build src/index.ts",
+    "reset-hard": "run-s reset-hard:*",
+    "reset-hard:git-clean": "git clean -dfx && git reset --hard",
+    "reset-hard:install": "pnpm install",
+    "fix": "run-s fix:*",
+    "fix:prettier": "prettier --write --ignore-unknown .",
+    "actions-test": "pnpm run test",
+    "actions-build": "pnpm run build"
+  },
+  "devDependencies": {
+    "@types/node": "<%= versions.TYPES_NODE %>",
+    "@vercel/ncc": "<%= versions.VERCEL_NCC %>",
+    "typescript": "<%= versions.TYPESCRIPT %>"
+  },
+  "dependencies": {
+    "@actions/core": "<%= versions.GITHUB_ACTIONS_CORE %>",
+    "@actions/github": "<%= versions.GITHUB_ACTIONS_GITHUB %>",
+    "@octokit/auth-token": "<%= versions.OCTOKIT_AUTH_TOKEN %>",
+    "@octokit/rest": "<%= versions.OCTOKIT_REST %>"
+  }
+}

@@ -1,0 +1,16 @@
+name: Publish Release
+
+on:
+  push:
+    branches:
+      - "release/*"
+
+jobs:
+  publish:
+    name: Publish a new version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v<%= versions.GITHUB_ACTIONS_CHECKOUT %>
+
+      - name: Create Release
+        uses: ./.github/actions/create-release
