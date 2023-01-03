@@ -48,7 +48,8 @@
     "scripts": {
       "prepare": "run-s prepare:*",
       "prepare:build": "tsc -p .schematic/tsconfig.json",
-      "prepare:initialize": "schematics .:initialize --debug=false"
+      "prepare:initialize": "schematics .:initialize --debug=false",
+      "prepare:delete-schematic": "rm -Rf .schematic"
     }
   },
   "fromTemplate": [
