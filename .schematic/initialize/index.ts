@@ -99,15 +99,16 @@ export function initialize(options: Options): Rule {
 function cleanGenerator(opts: Options) {
   return async (tree: Tree, _: SchematicContext) => {
     try {
-      tree.delete(".template");
+      tree.delete(".tpl");
     } catch {}
     try {
       tree.delete("pnpm-lock.yaml");
     } catch {}
-    try {
-      if (opts.deleteSchematic !== false) {
+    if (opts.deleteSchematic !== false) {
+      try {
         tree.delete(".schematic");
-      }
-    } catch {}
+        tree.delete(".template");
+      } catch {}
+    }
   };
 }
