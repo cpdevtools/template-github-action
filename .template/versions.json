@@ -16,7 +16,7 @@
   "OCTOKIT_AUTH_TOKEN": "3.0.2",
   "OCTOKIT_REST": "19.0.5",
   "PNPM": "7.6.0",
-  "PNPM_ACTION_SETUP": "2.2.2",
+  "PNPM_ACTION_SETUP": "2.2.4",
   "PRETTIER": "2.8.1",
   "TYPE_FEST": "3.5.1",
   "TYPES_NODE": "18.11.17",

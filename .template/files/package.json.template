@@ -42,5 +42,8 @@
     "@actions/github": "<%= versions.GITHUB_ACTIONS_GITHUB %>",
     "@octokit/auth-token": "<%= versions.OCTOKIT_AUTH_TOKEN %>",
     "@octokit/rest": "<%= versions.OCTOKIT_REST %>"
+  },
+    "lint-staged": {
+    "*": "prettier --write --ignore-unknown"
   }
 }
