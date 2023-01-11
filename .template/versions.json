@@ -17,9 +17,9 @@
   "OCTOKIT_REST": "19.0.5",
   "PNPM": "7.6.0",
   "PNPM_ACTION_SETUP": "2.2.4",
-  "PRETTIER": "2.8.1",
+  "PRETTIER": "2.8.2",
   "TYPE_FEST": "3.5.1",
-  "TYPES_NODE": "18.11.17",
+  "TYPES_NODE": "18.11.18",
   "TYPESCRIPT": "4.9.4",
   "VERCEL_NCC": "0.36.0"
 }
