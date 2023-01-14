@@ -11,12 +11,12 @@ runs:
         failInvalidCanCreate: true
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v<%= versions.GITHUB_ACTIONS_CREATE_RELEASE %>
+      uses: ncipollo/release-action@v<%= versions.NCIPOLLO_CREATE_RELEASE %>
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: v${{ steps.version.outputs.targetVersion }}
-        release_name: Release v${{ steps.version.outputs.targetVersion }}
+        tag: v${{ steps.version.outputs.targetVersion }}
+        name: Release v${{ steps.version.outputs.targetVersion }}
         body: |
           Generated Release v${{ steps.version.outputs.targetVersion }}
         draft: false
